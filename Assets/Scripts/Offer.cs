@@ -9,7 +9,7 @@ public class Offer : MonoBehaviour
     int Num_of_Requests = 0;
     public string current_request;
     public int Completed_request;
-    private List<string> goods = new List<string>() { "bread", "fish" };
+    private List<string> goods = new List<string>() { "bread", "fish"};
 
     [SerializeField] public GameObject Triple;
     [SerializeField] public GameObject Double;
@@ -26,7 +26,7 @@ public class Offer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        
     }
 
 
@@ -36,6 +36,7 @@ public class Offer : MonoBehaviour
         {
             string Item_requested = goods[Random.Range(0, 2)];
             client_animator[demand.client_order].SetBool("request", true);
+            demand.motionActive = false;
             if (Item_requested == "bread")
             {
                 Double.SetActive(true);

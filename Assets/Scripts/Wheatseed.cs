@@ -10,6 +10,8 @@ public class Wheatseed : MonoBehaviour
     [SerializeField] GameObject water_liquid;
     [SerializeField] GameObject wheat;
 
+    [SerializeField] AudioSource waterSFX;
+
     // Update is called once per frame
     void Update()
     {
@@ -36,6 +38,7 @@ public class Wheatseed : MonoBehaviour
         {
             water_pured = true;
             other.tag = "Untagged";
+            waterSFX.Play();
             water_liquid.SetActive(false);
         }
     }

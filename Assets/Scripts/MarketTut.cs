@@ -14,6 +14,8 @@ public class MarketTut : MonoBehaviour
 
     [SerializeField] GameObject LightSource;
 
+    [SerializeField] GameObject FirstClient;
+
 
     void Start()
     {
@@ -45,8 +47,9 @@ public class MarketTut : MonoBehaviour
     public void start_game()
     {
         Human.SetActive(false); Tut_UI.SetActive(false);
+        FirstClient.SetActive(true);
     }
-
+    
     
 
 }

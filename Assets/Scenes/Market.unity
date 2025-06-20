@@ -3218,7 +3218,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!65 &432407456
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3261,7 +3261,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 432407455}
   m_LocalRotation: {x: -0, y: -1, z: -0, w: 0}
-  m_LocalPosition: {x: 0.06, y: 0, z: 0.64}
+  m_LocalPosition: {x: 0.06, y: 0, z: 2.98}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -5277,6 +5277,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: XR Device Simulator
       objectReference: {fileID: 0}
+    - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
 --- !u!1 &810493691 stripped
@@ -6373,7 +6377,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.83137256}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -7187,6 +7191,8 @@ MonoBehaviour:
   AudioOpening: {fileID: 1033783835}
   Audio1: {fileID: 1033783832}
   Audio2: {fileID: 1033783831}
+  LightSource: {fileID: 1205289452}
+  FirstClient: {fileID: 432407455}
 --- !u!4 &1033783834
 Transform:
   m_ObjectHideFlags: 0
@@ -10928,6 +10934,7 @@ MonoBehaviour:
   - {fileID: 1464068462}
   - {fileID: 1797903194}
   client_order: 0
+  motionActive: 1
   finish: 0
 --- !u!1 &1667393622
 GameObject:

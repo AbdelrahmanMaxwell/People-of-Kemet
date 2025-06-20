@@ -13,6 +13,8 @@ public class Demand : MonoBehaviour
     [SerializeField] List<GameObject> clients = new List<GameObject>();
     public int client_order;
 
+    public bool motionActive = true;
+
 
     //Test [instead of UI button for now]
     [SerializeField] public bool finish = false;
@@ -26,7 +28,10 @@ public class Demand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (clients[client_order].activeSelf && motionActive)
+        {
+            clients[client_order].transform.localPosition -= new Vector3(0f,0f,0.008f);
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -75,6 +80,7 @@ public class Demand : MonoBehaviour
         else
         {
             clients[client_order].SetActive(true);
+            motionActive = true;
         }
     }
 }
