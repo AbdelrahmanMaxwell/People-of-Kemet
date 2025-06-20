@@ -12,10 +12,13 @@ public class MarketTut : MonoBehaviour
     [SerializeField] AudioSource Audio1;
     [SerializeField] AudioSource Audio2;
 
+    [SerializeField] GameObject LightSource;
+
 
     void Start()
     {
         StartCoroutine(play_Tut());
+        LightSource.transform.eulerAngles = new Vector3(40, 115f, 0f);
     }
 
     // Update is called once per frame

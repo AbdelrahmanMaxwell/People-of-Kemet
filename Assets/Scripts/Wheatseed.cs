@@ -5,7 +5,9 @@ using UnityEngine;
 public class Wheatseed : MonoBehaviour
 {
     [SerializeField] float growth_speed = 22f;
-    [SerializeField] bool water_pured = false;
+    bool water_pured = false;
+
+    [SerializeField] GameObject water_liquid;
     [SerializeField] GameObject wheat;
 
     // Update is called once per frame
@@ -26,5 +28,15 @@ public class Wheatseed : MonoBehaviour
             wheat.SetActive(true);
         }
         
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "water")
+        {
+            water_pured = true;
+            other.tag = "Untagged";
+            water_liquid.SetActive(false);
+        }
     }
 }

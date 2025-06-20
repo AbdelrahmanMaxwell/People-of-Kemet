@@ -10558,6 +10558,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CGM_ENV_BLD_LVL3_roof_top1 (17)
       objectReference: {fileID: 0}
+    - target: {fileID: 703287504929665380, guid: a5e7a7f8a2ef9be4f8175a265e5f85b9, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2405776718307130909, guid: a5e7a7f8a2ef9be4f8175a265e5f85b9, type: 3}
       propertyPath: m_RootOrder
       value: 26
