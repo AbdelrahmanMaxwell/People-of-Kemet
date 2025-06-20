@@ -5,6 +5,7 @@ using UnityEngine;
 public class HarvestCollector : MonoBehaviour
 {
     public int Bags_collected;
+    [SerializeField] AudioSource Star;
 
     void Start()
     {
@@ -22,6 +23,7 @@ public class HarvestCollector : MonoBehaviour
         if (Bags_collected == 3)
         {
             Debug.Log("Mission is Completed ..");
+            Star.Play();
         }
     }
 }

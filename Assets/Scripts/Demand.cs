@@ -9,6 +9,7 @@ public class Demand : MonoBehaviour
     public int Num_offer_goods;
 
     [SerializeField] Offer offer;
+    [SerializeField] AudioSource StarSFX;
 
     [SerializeField] List<GameObject> clients = new List<GameObject>();
     public int client_order;
@@ -76,6 +77,10 @@ public class Demand : MonoBehaviour
         if (client_order == 3)
         {
             Debug.Log(offer.Completed_request);
+            if (offer.Completed_request == 3)
+            {
+                StarSFX.Play();
+            }
         }
         else
         {
