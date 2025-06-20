@@ -13,6 +13,7 @@ TagManager:
   - sickle
   - Harvest_Collector
   - wheatBag
+  - fish
   layers:
   - Default
   - TransparentFX

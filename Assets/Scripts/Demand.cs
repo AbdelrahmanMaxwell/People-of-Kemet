@@ -11,7 +11,7 @@ public class Demand : MonoBehaviour
     [SerializeField] Offer offer;
 
     [SerializeField] List<GameObject> clients = new List<GameObject>();
-    int client_order;
+    public int client_order;
 
 
     //Test [instead of UI button for now]
@@ -26,16 +26,19 @@ public class Demand : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (finish)
-        {
-            finish_trade_process();
-            finish = false;
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)
     {
         if (other.tag == "bread")
+        {
+            //Debug.Log("Bread Included ..");
+            other.tag = "Untagged";
+            Num_offer_goods++;
+        }
+
+        if (other.tag == "fish")
         {
             //Debug.Log("Bread Included ..");
             other.tag = "Untagged";
@@ -48,11 +51,13 @@ public class Demand : MonoBehaviour
         if (offer.current_request == "bread" && Num_offer_goods == 3)
         {
             Debug.Log("Process Completed successfully");
+            offer.Double.SetActive(false);
             offer.Completed_request++;
         }
         else if (offer.current_request == "fish" && Num_offer_goods == 1)
         {
             Debug.Log("Process Completed successfully");
+            offer.Triple.SetActive(false);
             offer.Completed_request++;
         }
         else
@@ -60,7 +65,16 @@ public class Demand : MonoBehaviour
             Debug.Log("Process Incompleted!!");
         }
 
-        Destroy(clients[client_order], 2f);
+        clients[client_order].SetActive(false);
+        Num_offer_goods = 0;
         client_order++;
+        if (client_order == 3)
+        {
+            Debug.Log(offer.Completed_request);
+        }
+        else
+        {
+            clients[client_order].SetActive(true);
+        }
     }
 }

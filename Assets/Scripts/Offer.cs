@@ -11,9 +11,12 @@ public class Offer : MonoBehaviour
     public int Completed_request;
     private List<string> goods = new List<string>() { "bread", "fish" };
 
-    [SerializeField] GameObject Triple;
-    [SerializeField] GameObject Double;
-    [SerializeField] Animator client1_animator;
+    [SerializeField] public GameObject Triple;
+    [SerializeField] public GameObject Double;
+
+    //[SerializeField] Animator client1_animator;
+    [SerializeField] List<Animator> client_animator = new List<Animator>();
+    [SerializeField] Demand demand;
 
     void Start()
     {
@@ -32,7 +35,7 @@ public class Offer : MonoBehaviour
         if (other.tag == "client")
         {
             string Item_requested = goods[Random.Range(0, 2)];
-            client1_animator.SetBool("request", true);
+            client_animator[demand.client_order].SetBool("request", true);
             if (Item_requested == "bread")
             {
                 Double.SetActive(true);
